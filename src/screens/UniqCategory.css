@@ -1,0 +1,36 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5rem;
+    background-color: blanchedalmond;
+}
+
+.card-item {
+    margin-bottom: 20px;
+    margin: 0.5rem;
+}
+
+.card-elem {
+    background-color: burlywood;
+}
+
+.card-img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10%;
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .card-item {
+        flex: 0 0 calc(33.3333% - 20px);
+        max-width: calc(33.3333% - 20px);
+    }
+}

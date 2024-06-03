@@ -11,7 +11,6 @@ const Categories = () => {
             try {
                 const data = await fetchCategories();
                 setCategories(data.categories);
-                console.log(data.categories);
             } catch (error) {
                 console.log("Error is:", error.message);
             }
@@ -22,13 +21,16 @@ const Categories = () => {
     return (
         <div className='categories-container'>
             {categories.map((item) => (
-                <Link className='categories-card' key={item.idCategory} to={`/category/${item.strCategory}`}>
-                    <img className='category-image' src={item.strCategoryThumb} alt={`${item.idCategory}. category`} />
-                    <div className='h1-descp'>
-                        <h1>{item.strCategory}</h1>
-                        <h4 className='desc-text'>{item.strCategoryDescription}</h4>
-                    </div>
-                </Link>
+                <div className='categories-card' key={item.idCategory} >
+                    <Link className='category-link' to={`/category/${item.strCategory}`}>
+                        <img className='category-image' src={item.strCategoryThumb} alt={`${item.idCategory}. category`} />
+                        <div className='h1-descp'>
+                            <h1>{item.strCategory}</h1>
+                            <h4 className='desc-text'>{item.strCategoryDescription}</h4>
+                        </div>
+                    </Link>
+                    <h1 className='desc-text'>~</h1>
+                </div>
             ))}
         </div>
     )

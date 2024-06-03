@@ -27,7 +27,7 @@ function Header({ showHeader }) {
     return (
         <div>
             {!showHeader && (
-                <Navbar>
+                <Navbar className='header-navbar'>
                     <NavbarBrand onClick={goBack}>Back</NavbarBrand>
                     <NavbarBrand href="/">Food Nest</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
